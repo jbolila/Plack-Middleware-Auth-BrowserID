@@ -72,11 +72,11 @@ sub call {
 
 1;
 
-#ABSTRACT: TODO fill this
+#ABSTRACT: Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.
 
-__END__
+=pod
 
-==head1 SYNOPSIS
+=head1 SYNOPSIS
 
 use Plack::Builder;
 
@@ -86,7 +86,18 @@ builder {
     mount '/auth' => builder {
         enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
     };
+
     mount '/'      => $app;
 }
 
-==cut
+=head1 DESCRIPTION
+
+Mozilla Persona is a secure solutions, to identify (login) users based on email address.
+
+"Simple, privacy-sensitive single sign-in: let your users sign into your website with their email address, and free yourself from password management."
+
+Some code is needed in the client side, please see the example on tests and read the Mozilla Persona info on MDN.
+
+=cut
+
+__END__
