@@ -1,10 +1,8 @@
 # NAME
-=======
 
 `Plack::Middleware::Auth::BrowserID` - Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.
 
 # DESCRIPTION
-=======
 
 Mozilla Persona is a secure solutions, to identify (login) users based on email address.
 
@@ -26,17 +24,14 @@ plackup -s Starman -r -p 8082 -E development -I lib t/app.psgi
 All of then use the `Plack::Session` and are one [Dancer2](https://github.com/PerlDancer/Dancer2), one [Mojolicous](https://github.com/kraih/mojo) and one [Plack](https://github.com/plack/Plack), all of them sharing the same `app.psgi` and `session`.
 
 # AUTHOR
-=======
 
 João Bolila
 
 # SEE ALSO
-=======
 
 * [MDN Persona](https://developer.mozilla.org/en-US/Persona)
 * [Identity at Mozilla](http://identity.mozilla.com/)
 
 # LICENSE
-=======
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
