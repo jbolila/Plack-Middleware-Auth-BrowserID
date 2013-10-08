@@ -5,7 +5,7 @@ use warnings;
 use Carp 'croak';
 
 use parent qw(Plack::Middleware);
-use Plack::Util::Accessor qw( realm audience );
+use Plack::Util::Accessor qw( audience );
 use Plack::Response;
 use Plack::Session;
 
@@ -25,7 +25,6 @@ sub call {
 
     my $req     = Plack::Request->new($env);
     my $session = Plack::Session->new($env);
-
 
     if ( $req->method eq 'POST' ) {
         my $uri  = 'https://verifier.login.persona.org/verify';
