@@ -9,6 +9,7 @@ use Plack::Util::Accessor qw( audience );
 use Plack::Response;
 use Plack::Session;
 
+use LWP::Protocol::https;
 use LWP::UserAgent;
 use Mozilla::CA;
 use JSON;
@@ -71,7 +72,7 @@ sub call {
 
 1;
 
-#ABSTRACT: Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.
+#ABSTRACT: Plack Middleware to integrate with Mozilla Persona (Auth by email)
 
 =pod
 
