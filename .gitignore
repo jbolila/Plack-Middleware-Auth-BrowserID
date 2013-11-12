@@ -2,3 +2,5 @@
 *.bak
 *.swp
 Plack-Middleware-Auth-BrowserID-*
+.vagrant/
+Vagrantfile

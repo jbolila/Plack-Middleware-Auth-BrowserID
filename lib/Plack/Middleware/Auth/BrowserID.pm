@@ -78,17 +78,19 @@ sub call {
 
 =head1 SYNOPSIS
 
-use Plack::Builder;
+<code>
+    use Plack::Builder;
 
-builder {
-    enable 'Session', store => 'File';
+    builder {
+        enable 'Session', store => 'File';
 
-    mount '/auth' => builder {
-        enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
-    };
+        mount '/auth' => builder {
+            enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
+        };
 
-    mount '/'      => $app;
-}
+        mount '/'      => $app;
+    }
+</code>
 
 =head1 DESCRIPTION
 
@@ -97,6 +99,11 @@ Mozilla Persona is a secure solutions, to identify (login) users based on email 
 "Simple, privacy-sensitive single sign-in: let your users sign into your website with their email address, and free yourself from password management."
 
 Some code is needed in the client side, please see the example on tests and read the Mozilla Persona info on MDN.
+
+=head1 SEE ALSO
+
+L<LWP::Protocol::https>
+L<Net::BrowserID::Verify>
 
 =cut
 
