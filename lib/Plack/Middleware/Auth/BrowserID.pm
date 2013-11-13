@@ -1,7 +1,7 @@
 package Plack::Middleware::Auth::BrowserID;
-
-use 5.012;
+use strict;
 use warnings;
+
 use Carp 'croak';
 
 use parent qw(Plack::Middleware);
@@ -11,7 +11,6 @@ use Plack::Session;
 
 use LWP::Protocol::https;
 use LWP::UserAgent;
-use Mozilla::CA;
 use JSON;
 
 
@@ -37,10 +36,7 @@ sub call {
         $persona_req->header( 'Content-Type' => 'application/json' );
         $persona_req->content( to_json( $json, { utf8 => 1 } ) );
 
-        my $ua = LWP::UserAgent->new(
-            ssl_opts    => { verify_hostname => 1 },
-            SSL_ca_file => Mozilla::CA::SSL_ca_file()
-        );
+        my $ua = LWP::UserAgent->new( ssl_opts => { verify_hostname => 1 } );
 
         my $res      = $ua->request($persona_req);
         my $res_data = from_json( $res->decoded_content );
