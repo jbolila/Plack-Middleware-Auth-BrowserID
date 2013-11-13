@@ -74,8 +74,6 @@ sub call {
 
 =head1 SYNOPSIS
 
-    use Plack::Builder;
-
     builder {
         enable 'Session', store => 'File';
 
@@ -83,8 +81,8 @@ sub call {
             enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
         };
 
-        mount '/'      => $app;
-    }
+        mount '/'     => $app;
+    };
 
 =head1 DESCRIPTION
 
